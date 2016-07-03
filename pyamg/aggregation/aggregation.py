@@ -240,7 +240,7 @@ def smoothed_aggregation_solver(A, B=None, BH=None,
             raise ValueError('The near null-space modes B have incorrect '
                              'dimensions for matrix A')
         if B.shape[1] < blocksize(A):
-            warn('Having less target vectors, B.shape[1], than'
+            warn('Having less target vectors, B.shape[1], than '
                  'blocksize of A can degrade convergence factors.')
 
     # Left near nullspace candidates
@@ -252,11 +252,11 @@ def smoothed_aggregation_solver(A, B=None, BH=None,
             if len(BH.shape) == 1:
                 BH = BH.reshape(-1, 1)
             if BH.shape[1] != B.shape[1]:
-                raise ValueError('The number of left and right near \
-                                  null-space modes B and BH, must be equal')
+                raise ValueError('The number of left and right near '
+                                 'null-space modes B and BH, must be equal')
             if BH.shape[0] != A.shape[0]:
-                raise ValueError('The near null-space modes BH have \
-                                  incorrect dimensions for matrix A')
+                raise ValueError('The near null-space modes BH have '
+                                 'incorrect dimensions for matrix A')
 
     # Levelize the user parameters, so that they become lists describing the
     # desired user option on each level.

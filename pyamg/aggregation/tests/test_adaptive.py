@@ -43,6 +43,7 @@ class TestAdaptiveSA(TestCase):
         A, B = linear_elasticity((35, 35), format='bsr')
 
         smoother = ('gauss_seidel', {'sweep': 'symmetric', 'iterations': 2})
+        warnings.simplefilter('ignore', UserWarning, lineno=243)
         [asa, work] = adaptive_sa_solver(A, num_candidates=3,
                                          improvement_iters=5,
                                          prepostsmoother=smoother)
